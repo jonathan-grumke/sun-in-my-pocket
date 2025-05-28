@@ -22,12 +22,84 @@ export const components: Components<{
     disclaimer?: TinaMarkdownContent;
   };
   video: PageBlocksVideo;
+  ImageSolo: {
+    image: string;
+    format: string;
+    altText: string;
+  };
+  ImageDuo: {
+    image1: string;
+    image2: string;
+    format: string;
+    altText1: string;
+    altText2: string;
+  };
+  FunFact: {
+    content: TinaMarkdownContent;
+  };
 }> = {
   code_block: (props) => {
     if (!props) {
       return <></>;
     }
     return <Prism lang={props.lang} value={props.value} />;
+  },
+  ImageSolo: (props) => {
+    switch (props.format) {
+      case 'hochformat':
+        return <Image src={props.image} alt={props.altText ? props.altText : ''} className='image--vertical' width={500} height={500} />;
+      case 'querformat':
+        return <Image src={props.image} alt={props.altText ? props.altText : ''} className='image--horizontal' width={500} height={500} />;
+      case 'quadratisch':
+        return <Image src={props.image} alt={props.altText ? props.altText : ''} className='image--square' width={500} height={500} />;
+      default:
+        return <Image src={props.image} alt={props.altText ? props.altText : ''} className='image--square' width={500} height={500} />;
+    }
+  },
+  ImageDuo: (props) => {
+    switch (props.format) {
+      case 'hochformat':
+        return (
+          <div className='image-container--duo'>
+            <Image src={props.image1} alt={props.altText1 ? props.altText1 : ''} className='image--duo--vertical' width={500} height={500} />
+            <Image src={props.image2} alt={props.altText2 ? props.altText2 : ''} className='image--duo--vertical' width={500} height={500} />
+          </div>
+        );
+      case 'querformat':
+        return (
+          <div className='image-container--duo'>
+            <Image src={props.image1} alt={props.altText1 ? props.altText1 : ''} className='image--duo--horizontal' width={500} height={500} />
+            <Image src={props.image2} alt={props.altText2 ? props.altText2 : ''} className='image--duo--horizontal' width={500} height={500} />
+          </div>
+        );
+      case 'quadratisch':
+        return (
+          <div className='image-container--duo'>
+            <Image src={props.image1} alt={props.altText1 ? props.altText1 : ''} className='image--duo--square' width={500} height={500} />
+            <Image src={props.image2} alt={props.altText2 ? props.altText2 : ''} className='image--duo--square' width={500} height={500} />
+          </div>
+        );
+      default:
+        return (
+          <div className='image-container--duo'>
+            <Image src={props.image1} alt={props.altText1 ? props.altText1 : ''} className='image--duo--square' />
+            <Image src={props.image2} alt={props.altText2 ? props.altText2 : ''} className='image--duo--square' />
+          </div>
+        );
+    }
+  },
+  FunFact: (props) => {
+    return (
+      <div className='info-container'>
+        <img src='/assets/icons/tipp.svg' className='info-container--icon' />
+        <div className='info-container--text'>
+          <span>
+            <b>Fun Fact:</b>
+          </span>
+          <TinaMarkdown content={props.content} />
+        </div>
+      </div>
+    );
   },
   BlockQuote: (props: {
     children: TinaMarkdownContent;
@@ -88,11 +160,7 @@ export const components: Components<{
                 </button>
               </div>
             </form>
-            <div className='mt-3 text-sm text-gray-500'>
-              {props.disclaimer && (
-                <TinaMarkdown content={props.disclaimer} />
-              )}
-            </div>
+            <div className='mt-3 text-sm text-gray-500'>{props.disclaimer && <TinaMarkdown content={props.disclaimer} />}</div>
           </div>
         </div>
       </div>
