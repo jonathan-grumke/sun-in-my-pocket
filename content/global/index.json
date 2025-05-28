@@ -13,6 +13,10 @@
         "label": "Home"
       },
       {
+        "href": "/travel-diary",
+        "label": "Reisetagebuch"
+      },
+      {
         "href": "/about",
         "label": "About"
       },
