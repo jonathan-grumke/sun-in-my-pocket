@@ -1,3 +1,19 @@
+sun-in-my-pocket/
+├── app/
+│   ├── file1.pdf
+│   ├── file2.pdf
+│   └── ...
+├── components/
+│   ├── blocks/ <- block components for pages
+│   └── layout/
+
+
+## Add block component
+
+1. create file with component in /components/blocks/
+2. add schema to /tina/collection/page.ts
+3. add component block to /components/blocks/index.tsx
+
 # Tina Starter 🦙
 
 ![tina-cloud-starter-demo](https://user-images.githubusercontent.com/103008/130587027-995ccc45-a852-4f90-b658-13e8e0517339.gif)
