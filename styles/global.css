@@ -196,7 +196,13 @@ footer {
   color: rgb(var(--gray-dark));
 }
 
-/* Blog post images */
+/* Images */
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
 
 .hero-image--container {
   width: 100%;
@@ -286,4 +292,13 @@ footer {
 }
 .info-container p {
   margin: 0;
+}
+
+/* Blog Post Layout */
+
+.title {
+  margin-bottom: 1em;
+  padding: 1em 0;
+  text-align: center;
+  line-height: 1;
 }
