@@ -29,6 +29,8 @@ body {
 main {
   width: 820px;
   max-width: calc(100% - 2em);
+  /* width: 1020px;
+  max-width: 1020px; */
   margin: auto;
   padding: 3em 1em;
 }
@@ -79,6 +81,13 @@ a:hover {
 
 p {
   margin-bottom: 1em;
+}
+
+.prose {
+  width: 820px;
+  max-width: 100%;
+  margin: auto;
+  color: rgb(var(--gray-dark));
 }
 
 .prose p {
@@ -211,7 +220,7 @@ img {
 .hero-image {
   display: block;
   margin: 0 auto;
-  border-radius: 12px;
+  border-radius: 4px;
   object-fit: cover;
   aspect-ratio: 16 / 9;
 }
