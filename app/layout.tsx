@@ -39,10 +39,10 @@ export default function RootLayout({
   return (
     <html lang='en' className={cn(fontSans.variable, nunito.variable, lato.variable)}>
       <body className='min-h-screen bg-background font-sans antialiased'>
-        <VideoDialogProvider>
-          {children}
-          <VideoDialog />
-        </VideoDialogProvider>
+        {/* <VideoDialogProvider> */}
+        {children}
+        {/* <VideoDialog />
+        </VideoDialogProvider> */}
         {/* <TailwindIndicator /> */}
       </body>
     </html>
