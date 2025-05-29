@@ -24,21 +24,23 @@ export default function TravelDiaryClientPage(props: ClientTravelDiaryProps) {
   const post = data.travelDiary;
 
   const date = new Date(post.date!);
-  let formattedDate = '';
-  if (!isNaN(date.getTime())) {
-    formattedDate = format(date, 'MMM dd, yyyy');
-  }
+  const formattedDate = date.toLocaleDateString('de-DE', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
 
   return (
     <ErrorBoundary>
       <Section>
-        <h1 data-tina-field={tinaField(post, 'title')}>{post.title}</h1>
-        <div className=''>
-          <p data-tina-field={tinaField(post, 'author')} style={{ color: 'rgb(var(--gray))' }}>
-            {post.author}
-          </p>
-          <span className=''>—</span>
-          <p data-tina-field={tinaField(post, 'date')}>{formattedDate}</p>
+        <div className='title'>
+          <h1 data-tina-field={tinaField(post, 'title')}>{post.title}</h1>
+          <div className='' style={{ color: 'rgb(var(--gray))' }}>
+            <p data-tina-field={tinaField(post, 'author')} style={{ color: 'rgb(var(--gray))' }}>
+              {post.author}
+            </p>
+            <p data-tina-field={tinaField(post, 'date')}>{formattedDate}</p>
+          </div>
         </div>
         <div data-tina-field={tinaField(post, 'heroImg')} className='hero-image--container'>
           <Image src={post.heroImg} alt='' className={'hero-image'} width={1020} height={510} />
