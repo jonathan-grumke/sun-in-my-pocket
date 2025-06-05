@@ -25,7 +25,7 @@ const TravelDiary: Collection = {
       label: 'Hero Image',
       required: true,
       // @ts-ignore
-      uploadDir: () => 'assets',
+      // uploadDir: () => 'assets',
     },
     {
       type: 'rich-text',
@@ -61,73 +61,73 @@ const TravelDiary: Collection = {
       label: 'Body',
       name: '_body',
       templates: [
-        {
-          name: 'BlockQuote',
-          label: 'Block Quote',
-          fields: [
-            {
-              name: 'children',
-              label: 'Quote',
-              type: 'rich-text',
-              overrides: {
-                toolbar: ['bold', 'italic', 'link'],
-              },
-            },
-            {
-              name: 'authorName',
-              label: 'Author',
-              type: 'string',
-            },
-          ],
-        },
-        {
-          name: 'DateTime',
-          label: 'Date & Time',
-          inline: true,
-          fields: [
-            {
-              name: 'format',
-              label: 'Format',
-              type: 'string',
-              options: ['utc', 'iso', 'local'],
-            },
-          ],
-        },
-        {
-          name: 'NewsletterSignup',
-          label: 'Newsletter Sign Up',
-          fields: [
-            {
-              name: 'children',
-              label: 'CTA',
-              type: 'rich-text',
-            },
-            {
-              name: 'placeholder',
-              label: 'Placeholder',
-              type: 'string',
-            },
-            {
-              name: 'buttonText',
-              label: 'Button Text',
-              type: 'string',
-            },
-            {
-              name: 'disclaimer',
-              label: 'Disclaimer',
-              type: 'rich-text',
-              overrides: {
-                toolbar: ['bold', 'italic', 'link'],
-              },
-            },
-          ],
-          ui: {
-            defaultItem: {
-              placeholder: 'Enter your email',
-              buttonText: 'Notify Me',
-            },
-          },
-        },
+        // {
+        //   name: 'BlockQuote',
+        //   label: 'Block Quote',
+        //   fields: [
+        //     {
+        //       name: 'children',
+        //       label: 'Quote',
+        //       type: 'rich-text',
+        //       overrides: {
+        //         toolbar: ['bold', 'italic', 'link'],
+        //       },
+        //     },
+        //     {
+        //       name: 'authorName',
+        //       label: 'Author',
+        //       type: 'string',
+        //     },
+        //   ],
+        // },
+        // {
+        //   name: 'DateTime',
+        //   label: 'Date & Time',
+        //   inline: true,
+        //   fields: [
+        //     {
+        //       name: 'format',
+        //       label: 'Format',
+        //       type: 'string',
+        //       options: ['utc', 'iso', 'local'],
+        //     },
+        //   ],
+        // },
+        // {
+        //   name: 'NewsletterSignup',
+        //   label: 'Newsletter Sign Up',
+        //   fields: [
+        //     {
+        //       name: 'children',
+        //       label: 'CTA',
+        //       type: 'rich-text',
+        //     },
+        //     {
+        //       name: 'placeholder',
+        //       label: 'Placeholder',
+        //       type: 'string',
+        //     },
+        //     {
+        //       name: 'buttonText',
+        //       label: 'Button Text',
+        //       type: 'string',
+        //     },
+        //     {
+        //       name: 'disclaimer',
+        //       label: 'Disclaimer',
+        //       type: 'rich-text',
+        //       overrides: {
+        //         toolbar: ['bold', 'italic', 'link'],
+        //       },
+        //     },
+        //   ],
+        //   ui: {
+        //     defaultItem: {
+        //       placeholder: 'Enter your email',
+        //       buttonText: 'Notify Me',
+        //     },
+        //   },
+        // },
         {
           name: 'ImageSolo',
           label: 'Bild',
