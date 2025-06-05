@@ -24,27 +24,27 @@ export default async function TravelDiaryPage({
 }
 
 export async function generateStaticParams() {
-  let posts = await client.queries.postConnection();
+  let posts = await client.queries.travelDiaryConnection();
   const allPosts = posts;
 
-  if (!allPosts.data.postConnection.edges) {
+  if (!allPosts.data.travelDiaryConnection.edges) {
     return [];
   }
 
-  while (posts.data?.postConnection.pageInfo.hasNextPage) {
-    posts = await client.queries.postConnection({
-      after: posts.data.postConnection.pageInfo.endCursor,
+  while (posts.data?.travelDiaryConnection.pageInfo.hasNextPage) {
+    posts = await client.queries.travelDiaryConnection({
+      after: posts.data.travelDiaryConnection.pageInfo.endCursor,
     });
 
-    if (!posts.data.postConnection.edges) {
+    if (!posts.data.travelDiaryConnection.edges) {
       break;
     }
 
-    allPosts.data.postConnection.edges.push(...posts.data.postConnection.edges);
+    allPosts.data.travelDiaryConnection.edges.push(...posts.data.travelDiaryConnection.edges);
   }
 
   const params =
-    allPosts.data?.postConnection.edges.map((edge) => ({
+    allPosts.data?.travelDiaryConnection.edges.map((edge) => ({
       urlSegments: edge?.node?._sys.breadcrumbs,
     })) || [];
 
