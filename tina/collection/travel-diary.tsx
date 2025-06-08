@@ -41,6 +41,7 @@ const TravelDiary: Collection = {
       label: 'Autor',
       name: 'author',
       required: true,
+      options: ['Monique', 'Jonathan'],
     },
     {
       type: 'datetime',
@@ -50,12 +51,12 @@ const TravelDiary: Collection = {
         dateFormat: 'MMMM DD YYYY',
       },
     },
-    {
-      type: 'string',
-      label: 'URL',
-      name: 'slug',
-      required: true,
-    },
+    // {
+    //   type: 'string',
+    //   label: 'URL',
+    //   name: 'slug',
+    //   required: true,
+    // },
     {
       type: 'rich-text',
       label: 'Body',

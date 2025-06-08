@@ -29,7 +29,7 @@ export default function TravelDiaryClientPage(props: ClientTravelDiaryProps) {
       id: post.id,
       published: formattedDate,
       title: post.title,
-      url: `/travel-diary/${post.slug}`,
+      url: `/travel-diary/${post._sys.breadcrumbs.join('/')}`,
       description: post.description,
       heroImg: post.heroImg,
       author: post.author,

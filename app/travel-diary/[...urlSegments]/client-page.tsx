@@ -46,6 +46,15 @@ export default function TravelDiaryClientPage(props: ClientTravelDiaryProps) {
           <Image src={post.heroImg} alt='' className={'hero-image'} width={1020} height={510} />
         </div>
         <div data-tina-field={tinaField(post, '_body')} className='prose'>
+          <p>
+            Erlebe in unserem <strong>Reisetagebuch</strong> die Reise unseres Lebens hautnah mit. Tauche tief in unsere Gedankenwelt ein,{' '}
+            <strong>verfolge unsere Reiseroute</strong> auf Schritt und Tritt und lass dich in die Weiten der Welt mitnehmen.
+          </p>
+          <p>
+            Wir lassen Deutschland hinter uns und bereisen
+            <strong>1 Jahr lang</strong> mit dem Rucksack die Welt. Du erfährst hier in wöchentlichen Updates nicht nur von unserem aktuellen Standort, sondern
+            auch von unseren alltäglichen Erlebnissen und wie wir uns dabei fühlen.
+          </p>
           <TinaMarkdown
             content={post._body}
             components={{
