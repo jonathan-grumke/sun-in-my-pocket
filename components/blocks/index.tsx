@@ -10,6 +10,7 @@ import { Stats } from './stats';
 import { CallToAction } from './call-to-action';
 import { ImageSolo } from './image-solo';
 import { ImageDuo } from './image-duo';
+import client from '@/tina/__generated__/client';
 
 export const Blocks = (props: Omit<Page, 'id' | '_sys' | '_values'>) => {
   if (!props.blocks) return null;
@@ -48,6 +49,8 @@ const Block = (block: PageBlocks) => {
       return <ImageSolo data={block} />;
     case 'PageBlocksImageDuo':
       return <ImageDuo data={block} />;
+    // case 'PageBlocksDiaryPostList':
+    //   return <DiaryPostList data={block} />;
     default:
       return null;
   }

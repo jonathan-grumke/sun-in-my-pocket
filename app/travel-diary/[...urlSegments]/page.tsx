@@ -2,6 +2,10 @@ import React from 'react';
 import client from '@/tina/__generated__/client';
 import Layout from '@/components/layout/layout';
 import TravelDiaryClientPage from './client-page';
+import { Metadata } from 'next';
+import { useTina } from 'tinacms/dist/react';
+import { TravelDiaryQuery } from '@/tina/__generated__/types';
+import Head from 'next/head';
 
 export const revalidate = 300;
 

@@ -1,7 +1,7 @@
 {
   "header": {
     "icon": {
-      "name": "Tina",
+      "name": "BiAlbum",
       "color": "orange",
       "style": "float"
     },
@@ -17,12 +17,16 @@
         "label": "Reisetagebuch"
       },
       {
-        "href": "/about",
-        "label": "About"
+        "href": "/travel-guide",
+        "label": "Reiseziele"
       },
       {
-        "href": "/posts",
-        "label": "Blog"
+        "href": "/about",
+        "label": "Über uns"
+      },
+      {
+        "href": "/contact",
+        "label": "Kontakt"
       }
     ]
   },
