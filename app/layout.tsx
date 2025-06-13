@@ -9,26 +9,28 @@ import VideoDialog from '@/components/ui/VideoDialog';
 // import { TailwindIndicator } from '@/components/ui/breakpoint-indicator';
 
 import '@/styles/global.css';
+import Head from 'next/head';
 
-const fontSans = FontSans({
-  subsets: ['latin'],
-  variable: '--font-sans',
-});
+// const fontSans = FontSans({
+//   subsets: ['latin'],
+//   variable: '--font-sans',
+// });
 
-const nunito = Nunito({
-  subsets: ['latin'],
-  variable: '--font-nunito',
-});
+// const nunito = Nunito({
+//   subsets: ['latin'],
+//   variable: '--font-nunito',
+// });
 
-const lato = Lato({
-  subsets: ['latin'],
-  variable: '--font-lato',
-  weight: '400',
-});
+// const lato = Lato({
+//   subsets: ['latin'],
+//   variable: '--font-lato',
+//   weight: '400',
+// });
 
 export const metadata: Metadata = {
-  title: 'Tina',
-  description: 'Tina Cloud Starter',
+  title: 'Sun in my Pocket',
+  description:
+    'Lies über unsere Abenteuer auf der ganzen Welt und finde Reiserouten, Städtetrips, Tipps und Empfehlungen für Reiseziele rund um den Globus. Reise mit uns!',
 };
 
 export default function RootLayout({
@@ -37,8 +39,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en' className={cn(fontSans.variable, nunito.variable, lato.variable)}>
-      <body className='min-h-screen bg-background font-sans antialiased'>
+    <html lang='de'>
+      <Head>
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
+        <meta charSet='UTF-8' />
+      </Head>
+      <body>
         {/* <VideoDialogProvider> */}
         {children}
         {/* <VideoDialog />
