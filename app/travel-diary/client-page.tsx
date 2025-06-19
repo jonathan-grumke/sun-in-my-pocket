@@ -35,7 +35,7 @@ export default function TravelDiaryClientPage(props: ClientTravelDiaryProps) {
   return (
     <ErrorBoundary>
       <Section>
-        <h1>Reisetagebuch</h1>
+        <h1 style={{ hyphens: 'auto' }}>Reisetagebuch</h1>
         <p>
           Erlebe die Reise unseres Lebens hautnah mit uns. Tauche tief in unsere Gedankenwelt ein, verfolge unsere Route auf Schritt und Tritt und lass dich in
           die Weiten der Welt mitnehmen.
