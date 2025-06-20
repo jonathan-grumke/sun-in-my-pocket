@@ -69,6 +69,7 @@ export default function TravelDiaryClientPage(props: ClientTravelDiaryProps) {
             />
           </div>
         </Section>
+        <DiaryPosts title={'Du hast unsere letzten Weekly Updates noch nicht gelesen?'} numberOfPosts={5} />
       </ErrorBoundary>
     </>
   );
