@@ -50,6 +50,7 @@ const TravelDiary: Collection = {
       ui: {
         dateFormat: 'MMMM DD YYYY',
       },
+      required: true,
     },
     // {
     //   type: 'string',
