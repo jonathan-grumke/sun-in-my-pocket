@@ -47,10 +47,10 @@ const TravelDiary: Collection = {
       type: 'datetime',
       label: 'Datum',
       name: 'date',
+      required: true,
       ui: {
         dateFormat: 'MMMM DD YYYY',
       },
-      required: true,
     },
     // {
     //   type: 'string',
