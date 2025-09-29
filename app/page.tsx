@@ -32,7 +32,7 @@ export default async function Home() {
 
   const postsData = allPosts.data?.travelDiaryConnection.edges!.map((postData) => {
     const post = postData!.node!;
-    const date = new Date(post.date!);
+    const date = new Date(post.date);
     const formattedDate = date.toLocaleDateString('de-DE', {
       year: 'numeric',
       month: 'long',
