@@ -47,13 +47,13 @@ export const components: Components<{
   ImageSolo: (props) => {
     switch (props.format) {
       case 'hochformat':
-        return <Image src={props.image} alt={props.altText ? props.altText : ''} className='image--vertical' width={500} height={500} />;
+        return <Image src={props.image} alt={props.altText ? props.altText : ''} className='image--vertical max-width-600' width={500} height={500} />;
       case 'querformat':
-        return <Image src={props.image} alt={props.altText ? props.altText : ''} className='image--horizontal' width={500} height={500} />;
+        return <Image src={props.image} alt={props.altText ? props.altText : ''} className='image--horizontal max-width-600' width={500} height={500} />;
       case 'quadratisch':
-        return <Image src={props.image} alt={props.altText ? props.altText : ''} className='image--square' width={500} height={500} />;
+        return <Image src={props.image} alt={props.altText ? props.altText : ''} className='image--square max-width-600' width={500} height={500} />;
       default:
-        return <Image src={props.image} alt={props.altText ? props.altText : ''} className='image--square' width={500} height={500} />;
+        return <Image src={props.image} alt={props.altText ? props.altText : ''} className='image--square max-width-600' width={500} height={500} />;
     }
   },
   ImageDuo: (props) => {
