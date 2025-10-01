@@ -57,8 +57,7 @@ export default function TravelDiaryClientPage(props: ClientTravelDiaryProps) {
               <strong>verfolge unsere Reiseroute</strong> auf Schritt und Tritt und lass dich in die Weiten der Welt mitnehmen.
             </p>
             <p>
-              Wir lassen Deutschland hinter uns und bereisen
-              <strong>1 Jahr lang</strong> mit dem Rucksack die Welt. Du erfährst hier in wöchentlichen Updates nicht nur von unserem aktuellen Standort,
+              Wir lassen Deutschland hinter uns und bereisen <strong>1 Jahr lang</strong> mit dem Rucksack die Welt. Du erfährst hier in wöchentlichen Updates nicht nur von unserem aktuellen Standort,
               sondern auch von unseren alltäglichen Erlebnissen und wie wir uns dabei fühlen.
             </p>
             <TinaMarkdown
