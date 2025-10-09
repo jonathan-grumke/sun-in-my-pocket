@@ -28,11 +28,11 @@ const TravelDiary: Collection = {
       // uploadDir: () => 'assets',
     },
     {
-      type: 'rich-text',
+      type: 'string',
       label: 'Beschreibung',
       name: 'description',
-      overrides: {
-        toolbar: ['bold', 'italic', 'link'],
+      ui: {
+        component: "textarea",
       },
       required: true,
     },
