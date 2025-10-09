@@ -1,5 +1,5 @@
 import RSS from "rss";
-import client from "@/tina/__generated__/client";
+import { getAllDiaryPosts } from "@/lib/posts";
 
 const feed = new RSS({
   title: "Sun In My Pocket",
@@ -11,9 +11,10 @@ const feed = new RSS({
   pubDate: new Date(),
 });
 
-const posts = await client.queries.travelDiaryConnection({});
+// const posts = await client.queries.travelDiaryConnection({});
+const diaryPosts = await getAllDiaryPosts();
 
-posts.data.travelDiaryConnection.edges?.forEach((postData) => {
+diaryPosts.data.travelDiaryConnection.edges!.forEach((postData) => {
   const post = postData!.node!;
   feed.item({
     title: post.title,
