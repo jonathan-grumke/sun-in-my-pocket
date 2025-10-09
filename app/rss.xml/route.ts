@@ -5,8 +5,8 @@ const feed = new RSS({
   title: "Sun In My Pocket",
   description: "Folge uns auf unseren Reisen rund um die Welt.",
   site_url: "https://suninmypocket.com",
-  feed_url: `https://suninmypocket.com/feed.xml`,
-  copyright: `${new Date().getFullYear()} Your Website`,
+  feed_url: `https://suninmypocket.com/rss.xml`,
+  copyright: `${new Date().getFullYear()} Sun In My Pocket`,
   language: "de-DE",
   pubDate: new Date(),
 });
