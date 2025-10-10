@@ -29,3 +29,33 @@ export async function getAllDiaryPosts() {
 
   return allPosts;
 }
+
+export async function getAllGuidePosts() {
+  let posts = await client.queries.travelGuideConnection({
+    sort: "date",
+    last: 1,
+  });
+  const allPosts = posts;
+
+  //   if (!allPosts.data.travelDiaryConnection.edges) {
+  //     return [];
+  //   }
+
+  while (posts.data?.travelGuideConnection.pageInfo.hasPreviousPage) {
+    posts = await client.queries.travelGuideConnection({
+      sort: "date",
+      before: posts.data.travelGuideConnection.pageInfo.endCursor,
+      filter: { published: { eq: "Ja" } },
+    });
+
+    if (!posts.data.travelGuideConnection.edges) {
+      break;
+    }
+
+    allPosts.data.travelGuideConnection.edges!.push(
+      ...posts.data.travelGuideConnection.edges.reverse()
+    );
+  }
+
+  return allPosts;
+}
