@@ -4,6 +4,7 @@ export async function getAllDiaryPosts() {
   let posts = await client.queries.travelDiaryConnection({
     sort: "date",
     last: 1,
+    filter: { published: { eq: "Ja" } },
   });
   const allPosts = posts;
 
@@ -15,7 +16,7 @@ export async function getAllDiaryPosts() {
     posts = await client.queries.travelDiaryConnection({
       sort: "date",
       before: posts.data.travelDiaryConnection.pageInfo.endCursor,
-      filter: { published: { eq: true } },
+      filter: { published: { eq: "Ja" } },
     });
 
     if (!posts.data.travelDiaryConnection.edges) {
@@ -34,6 +35,7 @@ export async function getAllGuidePosts() {
   let posts = await client.queries.travelGuideConnection({
     sort: "date",
     last: 1,
+    filter: { published: { eq: "Ja" } },
   });
   const allPosts = posts;
 

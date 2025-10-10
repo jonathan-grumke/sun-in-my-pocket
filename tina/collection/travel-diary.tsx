@@ -20,17 +20,17 @@ const TravelDiary: Collection = {
       required: true,
     },
     {
-      type: 'boolean',
-      label: 'Veröffentlicht',
+      type: 'string',
+      label: 'Veröffentlichen',
       name: 'published',
+      required: true,
+      options: ['Ja', 'Nein'],
     },
     {
       type: 'image',
       name: 'heroImg',
       label: 'Hero Image',
       required: true,
-      // @ts-ignore
-      // uploadDir: () => 'assets',
     },
     {
       type: 'string',
