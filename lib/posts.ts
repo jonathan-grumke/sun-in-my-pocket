@@ -4,6 +4,7 @@ export async function getAllDiaryPosts() {
   let posts = await client.queries.travelDiaryConnection({
     sort: "date",
     last: 1,
+    filter: { published: { eq: "Ja" } },
   });
   const allPosts = posts;
 
@@ -34,6 +35,7 @@ export async function getAllGuidePosts() {
   let posts = await client.queries.travelGuideConnection({
     sort: "date",
     last: 1,
+    filter: { published: { eq: "Ja" } },
   });
   const allPosts = posts;
 
