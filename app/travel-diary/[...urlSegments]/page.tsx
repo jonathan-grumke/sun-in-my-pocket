@@ -7,6 +7,7 @@ import { useTina } from 'tinacms/dist/react';
 import { TravelDiaryQuery } from '@/tina/__generated__/types';
 import Head from 'next/head';
 import Image from 'next/image';
+import { getAllDiaryPosts } from '@/lib/posts';
 
 export const revalidate = 300;
 
@@ -15,28 +16,7 @@ export default async function TravelDiaryPage({
 }: {
   params: Promise<{ urlSegments: string[] }>;
 }) {
-  let posts = await client.queries.travelDiaryConnection({
-    sort: 'date',
-    last: 1,
-  });
-  const allPosts = posts;
-
-  if (!allPosts.data.travelDiaryConnection.edges) {
-    return [];
-  }
-
-  while (posts.data?.travelDiaryConnection.pageInfo.hasPreviousPage) {
-    posts = await client.queries.travelDiaryConnection({
-      sort: 'date',
-      before: posts.data.travelDiaryConnection.pageInfo.endCursor,
-    });
-
-    if (!posts.data.travelDiaryConnection.edges) {
-      break;
-    }
-
-    allPosts.data.travelDiaryConnection.edges.push(...posts.data.travelDiaryConnection.edges.reverse());
-  }
+  const allPosts = await getAllDiaryPosts();
 
   const postsData = allPosts.data?.travelDiaryConnection.edges!.map((postData) => {
     const post = postData!.node!;
@@ -49,7 +29,7 @@ export default async function TravelDiaryPage({
 
     return {
       id: post.id,
-      published: formattedDate,
+      datePublished: formattedDate,
       title: post.title,
       url: `/travel-diary/${post._sys.breadcrumbs.join('/')}`,
       description: post.description,
@@ -74,7 +54,7 @@ export default async function TravelDiaryPage({
             <a href={post.url}>
               <Image src={post.heroImg} className={'tile-image'} width={720} height={360} alt='' />
               <p className='posts-list--title'>{post.title}</p>
-              <p className='posts-list--date'>{post.published}</p>
+              <p className='posts-list--date'>{post.datePublished}</p>
             </a>
           </li>
         ))}
