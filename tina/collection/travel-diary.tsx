@@ -20,6 +20,11 @@ const TravelDiary: Collection = {
       required: true,
     },
     {
+      type: 'boolean',
+      label: 'Veröffentlicht',
+      name: 'published',
+    },
+    {
       type: 'image',
       name: 'heroImg',
       label: 'Hero Image',

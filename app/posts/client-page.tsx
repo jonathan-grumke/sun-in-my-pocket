@@ -28,7 +28,7 @@ export default function PostsClientPage(props: ClientPostProps) {
 
     return {
       id: post.id,
-      published: formattedDate,
+      datePublished: formattedDate,
       title: post.title,
       tags: post.tags?.map((tag) => tag?.tag?.name) || [],
       url: `/posts/${post._sys.breadcrumbs.join('/')}`,
@@ -94,7 +94,7 @@ export default function PostsClientPage(props: ClientPostProps) {
                       <span className="text-muted-foreground">{post.author.name}</span>
                       <span className="text-muted-foreground">•</span>
                       <span className="text-muted-foreground">
-                        {post.published}
+                        {post.datePublished}
                       </span>
                     </div>
                     <div className="mt-6 flex items-center space-x-2 md:mt-8">

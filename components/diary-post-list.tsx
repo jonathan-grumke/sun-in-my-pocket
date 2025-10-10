@@ -37,7 +37,7 @@ export const DiaryPosts = async ({ title, numberOfPosts }) => {
 
     return {
       id: post.id,
-      published: formattedDate,
+      datePublished: formattedDate,
       title: post.title,
       url: `/travel-diary/${post._sys.breadcrumbs.join('/')}`,
       description: post.description,
@@ -55,7 +55,7 @@ export const DiaryPosts = async ({ title, numberOfPosts }) => {
             <a href={post.url}>
               <Image src={post.heroImg} className={'tile-image'} width={720} height={360} alt='' />
               <p className='posts-list--title'>{post.title}</p>
-              <p className='posts-list--date'>{post.published}</p>
+              <p className='posts-list--date'>{post.datePublished}</p>
             </a>
           </li>
         ))}
