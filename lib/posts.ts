@@ -15,7 +15,7 @@ export async function getAllDiaryPosts() {
     posts = await client.queries.travelDiaryConnection({
       sort: "date",
       before: posts.data.travelDiaryConnection.pageInfo.endCursor,
-      filter: { published: { eq: true } },
+      filter: { published: { eq: "Ja" } },
     });
 
     if (!posts.data.travelDiaryConnection.edges) {
