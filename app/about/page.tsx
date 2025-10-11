@@ -1,0 +1,66 @@
+import React from 'react';
+import Layout from '@/components/layout/layout';
+import { ImageSolo } from '@/components/images/image-solo';
+import { ImageDuo } from '@/components/images/image-duo';
+
+export const revalidate = 300;
+
+export default async function About() {
+    return (
+        <Layout>
+            <h1 className='space-after'>Wer ist Sun in my Pocket?</h1>
+            <ImageSolo image='/assets/italy/verona/couple-colosseum.jpg' />
+            <p>
+                Hey! Wir sind Jonathan (27) und Monique (29) – zwei Reiseblogger aus
+                Deutschland Nordrhein-Westfalen. Jonathan hat Physik studiert und arbeitet
+                seit 3 Jahren in der IT–Branche, während ich in den Niederlanden studiert
+                habe und seit 5 Jahren als Logopädin arbeite. Außerhalb von unserer Arbeit
+                sind wir außerdem zwei Freiheit liebende und reiselustige Menschen, die
+                mehr von der Welt und weniger vom 9to5 Alltag sehen wollen. Aus diesem
+                Grund haben wir unsere Jobs gekündigt, um in 2025 ein ganzes Jahr lang um
+                die Welt zu reisen. Dabei wollen wir euch mitnehmen!
+            </p>
+            <h2>Wer ist Monique?</h2>
+            <p>
+                Hmm... Wer bin ich? Zuerst würde Ich mich als durchaus kreativen Menschen
+                beschreiben, der gerne Dinge selber macht. Dazu gehören z.B. das
+                Zeichnen/Malen, Makramee knüpfen oder auch das Up-cycling von Möbeln in
+                unserer Wohnung. Zudem koche ich in meiner Freizeit gerne und probiere
+                neue Rezepte aus. Manchmal mutiere ich allerdings auch zu einer kleinen
+                Leseratte und sauge die Geschichten in den Büchern förmlich auf. Außerdem
+                liebe ich Sonnenuntergänge und bin gerne in der Natur (vor allem beim
+                Reisen). Wenn ich aktiv sein möchte fahre ich gerne Inliner, mache Yoga
+                oder gehe spazieren. Zuletzt der wichtigste Punkt: Mein größter
+                Lebenstraum ist es die ganze Welt zu bereisen.
+            </p>
+            <p>
+                Achja und ich bin süchtig nach Matcha!
+            </p>
+            <ImageDuo image1='/assets/italy/verona/monique-fahrrad.jpg' image2='/assets/germany/munich/oktoberfest-monique.JPG' format='hochformat' />
+            <h2>Wer ist Jonathan?</h2>
+            <p>
+                Der Junge mit den roten Haaren… das bin ich! Meine Freunde nennen mich
+                Jona, Johnny oder auch Johnnyboy. In meiner Freizeit bin Ich am liebsten
+                draußen, zumal ich ein sehr aktiver Mensch bin. Daher findet man mich an
+                den Wochenenden in der Regel auf dem Sportplatz beim American Football
+                oder mit meinen Freunden auf dem Golfplatz. Auch beim Reisen bin ich gerne
+                aktiv, egal ob wandern, surfen oder Ski fahren – ich bin dabei. Allerdings
+                darf die Entspannung für mich auch nicht fehlen. In ruhigen Momenten lese
+                ich gerne, höre Podcasts oder mache einfach die Augen zu und lasse die
+                Welt ihr Ding machen. Außerdem liebe ich Salat und Apfelmus. Aber niemals
+                zusammen!
+            </p>
+            <ImageSolo image='/assets/italy/lago-di-braies/jona.jpg' />
+            <h2>Warum „Sun in my Pocket“?</h2>
+            <p>
+                Der erste Gedanke, der uns bei einem Jahr Weltreise kam, war „Geil, 1 Jahr
+                Sommer!”. Und was gehört zum Sommer? Klar, die Sonne. Die man am liebsten
+                einfach in die Tasche stecken und mit ins regnerische Deutschland nehmen
+                würde. Ergo „Sun In My Pocket”. Zudem soll der Name unser positives
+                Mindset, mit dem wir die Weltreise antreten und unsere Begeisterung zum
+                Reisen widerspiegeln.
+            </p>
+            <ImageSolo image='/assets/portugal/madeira/couple-coast.jpg' />
+        </Layout>
+    );
+}
