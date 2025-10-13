@@ -37,6 +37,14 @@ export const components: Components<{
   FunFact: {
     content: TinaMarkdownContent;
   };
+  Tipp: {
+    content: TinaMarkdownContent;
+  };
+  Info: {
+    icon: string;
+    title: string;
+    content: TinaMarkdownContent;
+  }
 }> = {
   code_block: (props) => {
     if (!props) {
@@ -82,8 +90,8 @@ export const components: Components<{
       default:
         return (
           <div className='image-container--duo'>
-            <Image src={props.image1} alt={props.altText1 ? props.altText1 : ''} className='image--duo--square' />
-            <Image src={props.image2} alt={props.altText2 ? props.altText2 : ''} className='image--duo--square' />
+            <Image src={props.image1} alt={props.altText1 ? props.altText1 : ''} className='image--duo--square' width={500} height={500} />
+            <Image src={props.image2} alt={props.altText2 ? props.altText2 : ''} className='image--duo--square' width={500} height={500} />
           </div>
         );
     }
@@ -95,6 +103,42 @@ export const components: Components<{
         <div className='info-container--text'>
           <span>
             <b>Fun Fact:</b>
+          </span>
+          <TinaMarkdown content={props.content} />
+        </div>
+      </div>
+    );
+  },
+  Tipp: (props) => {
+    return (
+      <div className='info-container'>
+        <img src='/assets/icons/tipp.svg' className='info-container--icon' />
+        <div className='info-container--text'>
+          <span>
+            <b>Tipp:</b>
+          </span>
+          <TinaMarkdown content={props.content} />
+        </div>
+      </div>
+    );
+  },
+  Info: (props) => {
+    const iconDict = {
+      Auto: '/assets/icons/auto.svg',
+      Bus: '/assets/icons/bus.svg',
+      Eintritt: '/assets/icons/eintritt.svg',
+      Erde: '/assets/icons/erde.svg',
+      Kosten: '/assets/icons/kosten.svg',
+      Tipp: '/assets/icons/tipp.svg',
+      Unterkunft: '/assets/icons/unterkunft.svg',
+      Zeit: '/assets/icons/zeit.svg',
+    };
+    return (
+      <div className='info-container'>
+        <img src={iconDict[props.icon]} className='info-container--icon' />
+        <div className='info-container--text'>
+          <span>
+            <b>{props.title}:</b>
           </span>
           <TinaMarkdown content={props.content} />
         </div>

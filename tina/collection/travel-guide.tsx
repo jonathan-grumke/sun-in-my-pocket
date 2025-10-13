@@ -75,7 +75,7 @@ const TravelGuide: Collection = {
             templates: [
                 {
                     name: 'ImageSolo',
-                    label: 'Bild',
+                    label: '1 Bild',
                     fields: [
                         {
                             name: 'image',
@@ -92,7 +92,7 @@ const TravelGuide: Collection = {
                         },
                         {
                             name: 'altText',
-                            label: 'Alternativtext',
+                            label: 'Alternativtext (optional)',
                             type: 'string',
                         },
                     ],
@@ -146,6 +146,45 @@ const TravelGuide: Collection = {
                         },
                     ],
                 },
+                {
+                    name: 'Tipp',
+                    label: 'Tipp',
+                    fields: [
+                        {
+                            name: 'content',
+                            label: 'Inhalt',
+                            type: 'rich-text',
+                            overrides: {
+                                toolbar: ['bold', 'italic', 'link'],
+                            },
+                        },
+                    ],
+                },
+                {
+                    name: 'Info',
+                    label: 'Info',
+                    fields: [
+                        {
+                            name: 'icon',
+                            label: 'Icon',
+                            type: 'string',
+                            options: ['Auto', 'Bus', 'Eintritt', 'Erde', 'Kosten', 'Tipp', 'Unterkunft', 'Zeit']
+                        },
+                        {
+                            name: 'title',
+                            label: 'Titel',
+                            type: 'string',
+                        },
+                        {
+                            name: 'content',
+                            label: 'Inhalt',
+                            type: 'rich-text',
+                            overrides: {
+                                toolbar: ['bold', 'italic', 'link'],
+                            },
+                        },
+                    ]
+                }
             ],
             isBody: true,
         },
